@@ -103,9 +103,10 @@ align-items:center;
 gap:15px;
 }
 
-.logo-img{
-height:60px;
+.logo img{
+height:80px;
 width:auto;
+display:block;
 }
 
 nav{
