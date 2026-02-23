@@ -98,17 +98,21 @@ padding:10px;
 
 }
 .logo{
-
 display:flex;
-
 align-items:center;
-
-gap:10px;
-
+gap:15px;
 }
 
-.logo img{
+.logo-img{
+height:60px;
+width:auto;
+}
 
-border-radius:10px;
-
+nav{
+background:black;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
 }
