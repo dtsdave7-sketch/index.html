@@ -100,11 +100,11 @@ padding:10px;
 .logo{
 display:flex;
 align-items:center;
-gap:15px;
+gap:150px;
 }
 
 .logo img{
-height:200px;
+height:400px;
 width:auto;
 display:block;
 }
