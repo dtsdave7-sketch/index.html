@@ -2,6 +2,7 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -9,18 +10,89 @@
 
 <link rel="stylesheet" href="style.css">
 
+<style>
+
+/* HERO */
+
+.hero{
+
+text-align:center;
+padding:80px 20px;
+
+}
+
+
+.hero h1{
+
+font-size:40px;
+margin-bottom:10px;
+
+}
+
+
+.hero p{
+
+max-width:600px;
+margin:auto;
+font-size:18px;
+
+}
+
+
+/* SECTION */
+
+.section{
+
+margin-top:60px;
+text-align:center;
+
+}
+
+
+/* GRID */
+
+.features{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:30px;
+
+}
+
+
+.card{
+
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0px 5px 15px rgba(0,0,0,0.1);
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:28px;
+
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
 
+
 <nav>
-<div class="logo">
-<img src="logo.png" >
-</div>
 
-<h2>“From Knowledge to Profit” </h2>
-
-</div>
+<h2>TechEco Lead</h2>
 
 <ul>
 
@@ -35,22 +107,168 @@
 </nav>
 
 
+
+<!-- HERO -->
+
 <section class="hero">
 
-<h1>Bienvenue chez TechEco Lead</h1>
+<h1>
+
+Devenez Trader avec TEM Academy
+
+</h1>
+
 
 <p>
-Formation en Trading, Finance et Leadership Digital
+
+Apprenez le Trading et la Finance avec une formation
+professionnelle adaptée aux débutants et intermédiaires.
+
 </p>
 
-<a href="academy.html" class="btn">
-Découvrir TEM Academy
+
+<br>
+
+
+<a class="btn"
+href="contact.html#inscription">
+
+🚀 Commencer la formation
+
 </a>
+
+
+<br><br>
+
+
+<a class="btn"
+href="https://wa.me/50946126417?text=Bonjour%20TechEco%20Lead,%20je%20veux%20plus%20d'informations"
+target="_blank">
+
+💬 WhatsApp
+
+</a>
+
 
 </section>
 
 
-<script src="script.js"></script>
+
+<!-- PRESENTATION -->
+
+<section class="page section">
+
+
+<h2>
+
+Pourquoi choisir TechEco Lead ?
+
+</h2>
+
+
+
+<div class="features">
+
+
+<div class="card">
+
+<h3>
+
+📈 Formation Trading
+
+</h3>
+
+<p>
+
+Apprenez les stratégies utilisées par les traders
+professionnels.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+📊 Analyse des marchés
+
+</h3>
+
+<p>
+
+Comprenez les marchés financiers et prenez de
+meilleures décisions.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+👨‍🏫 Accompagnement
+
+</h3>
+
+<p>
+
+Bénéficiez d'un accompagnement pour progresser
+rapidement.
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- TEM ACADEMY -->
+
+<section class="page section">
+
+
+<h2>
+
+TEM Academy
+
+</h2>
+
+
+<p style="max-width:600px;margin:auto;">
+
+TEM Academy est une formation complète qui vous
+apprend le trading de zéro jusqu'à un niveau avancé.
+
+</p>
+
+
+<br>
+
+
+<a class="btn"
+href="academy.html">
+
+Voir la formation
+
+</a>
+
+
+</section>
+
+
 
 </body>
+
 </html>
