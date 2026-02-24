@@ -11,14 +11,12 @@ background:#f5f7fa;
 
 nav{
 
-background:#0a7cff;
+background:black;
 color:white;
-padding:15px;
-
 display:flex;
 justify-content:space-between;
 align-items:center;
-flex-wrap:wrap;
+padding:15px 40px;
 
 }
 
