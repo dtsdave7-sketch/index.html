@@ -1,16 +1,49 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Départements</title>
+<title>Nos Départements - TechEco Lead</title>
 
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+.departements{
+
+display:grid;
+grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+gap:25px;
+margin-top:30px;
+
+}
+
+.card{
+
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0px 5px 15px rgba(0,0,0,0.1);
+
+}
+
+.card h2{
+
+color:#0a7cff;
+margin-bottom:10px;
+
+}
+
+.title{
+
+text-align:center;
+
+}
+
+</style>
 
 </head>
 
@@ -35,24 +68,82 @@
 
 <section class="page">
 
-<h1>Nos Départements</h1>
+<h1 class="title">
+Nos Départements
+</h1>
+
+<p class="title">
+
+Découvrez les différents services offerts par TechEco Lead pour accompagner votre réussite.
+
+</p>
 
 
-<h2>TechEco Markets</h2>
-<p>Trading et investissements.</p>
+
+<div class="departements">
 
 
-<h2>TechEco Consulting</h2>
-<p>Conseil financier et business.</p>
+<div class="card">
+
+<h2>📈 TechEco Markets</h2>
+
+<p>
+
+Formation et accompagnement en trading et investissements financiers.
+Nous aidons les étudiants à comprendre les marchés et à développer
+des stratégies efficaces.
+
+</p>
+
+</div>
 
 
-<h2>TechEco Analysis</h2>
-<p>Analyse des marchés.</p>
+
+<div class="card">
+
+<h2>💼 TechEco Consulting</h2>
+
+<p>
+
+Conseils professionnels en gestion financière et en développement
+de business afin d'aider les entrepreneurs à réussir leurs projets.
+
+</p>
+
+</div>
 
 
-<h2>TechEco Community</h2>
-<p>Communauté d'apprentissage.</p>
 
+<div class="card">
+
+<h2>📊 TechEco Analysis</h2>
+
+<p>
+
+Analyse approfondie des marchés financiers pour aider les traders
+à prendre de meilleures décisions d'investissement.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>👥 TechEco Community</h2>
+
+<p>
+
+Une communauté dynamique d'apprentissage où les membres peuvent
+échanger des idées, partager leurs expériences et progresser ensemble.
+
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
