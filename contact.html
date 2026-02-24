@@ -2,6 +2,7 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,22 +12,51 @@
 
 <style>
 
-form{
-max-width:500px;
-margin:auto;
+/* GRID LAYOUT */
+
+.container{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+margin-top:40px;
+
+}
+
+
+/* FORM */
+
+.form-box{
+
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0px 5px 15px rgba(0,0,0,0.1);
+
+}
+
+
+.form-box form{
+
 display:flex;
 flex-direction:column;
 gap:15px;
+
 }
 
-input, textarea{
+
+input, textarea, select{
+
 padding:12px;
 border-radius:8px;
 border:1px solid #ccc;
 font-size:16px;
+
 }
 
+
 button{
+
 padding:12px;
 border:none;
 background:#0a7cff;
@@ -34,18 +64,38 @@ color:white;
 font-size:18px;
 border-radius:8px;
 cursor:pointer;
+
 }
+
 
 button:hover{
+
 background:#055fd1;
+
 }
 
+
 .success{
+
 display:none;
 text-align:center;
 color:green;
 font-weight:bold;
-margin-top:15px;
+margin-top:10px;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.container{
+
+grid-template-columns:1fr;
+
+}
+
 }
 
 </style>
@@ -78,28 +128,21 @@ margin-top:15px;
 Contact & Inscription
 </h1>
 
+
 <p style="text-align:center;max-width:600px;margin:auto;">
 
-Rejoignez TEM Academy ou contactez-nous pour plus d'informations sur nos formations.
+Rejoignez TEM Academy ou contactez-nous pour plus d'informations.
 
 </p>
 
 
 
-<div style="
-
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-margin-top:40px;
-
-">
+<div class="container">
 
 
-<!-- COLONNE INSCRIPTION -->
+<!-- INSCRIPTION -->
 
-<div>
-
+<div class="form-box">
 
 <h2 id="inscription">
 
@@ -108,82 +151,59 @@ Inscription TEM Academy
 </h2>
 
 
-<form action="https://formspree.io/f/xpqjkwdp"
-
-method="POST"
-
-style="
-
-display:flex;
-flex-direction:column;
-gap:15px;
-
-">
+<form id="inscriptionForm"
+action="https://formspree.io/f/xpqjkwdp"
+method="POST">
 
 
 <input type="text"
-
 name="Nom"
-
 placeholder="Nom complet"
-
 required>
 
 
 <input type="email"
-
 name="Email"
-
 placeholder="Adresse Email"
-
 required>
 
 
 <input type="text"
-
 name="Telephone"
-
 placeholder="Téléphone WhatsApp"
-
 required>
 
 
 <select name="Niveau">
 
 <option>
-
 Niveau en Trading
-
 </option>
 
 <option>
-
 Débutant
-
 </option>
 
 <option>
-
 Intermédiaire
-
 </option>
 
 <option>
-
 Avancé
-
 </option>
 
 </select>
 
 
 <textarea name="Motivation"
-
 placeholder="Pourquoi voulez-vous apprendre le trading ?"
-
 rows="4">
-
 </textarea>
+
+
+<input type="text"
+name="_gotcha"
+style="display:none">
 
 
 <button type="submit">
@@ -193,6 +213,13 @@ S'inscrire maintenant
 </button>
 
 
+<div class="success" id="success1">
+
+✔️ Inscription envoyée avec succès !
+
+</div>
+
+
 </form>
 
 
@@ -200,9 +227,21 @@ S'inscrire maintenant
 
 
 
-<!-- COLONNE CONTACT -->
+<!-- CONTACT -->
 
-<form action="https://formspree.io/f/xpqjkwdp" method="POST">
+<div class="form-box">
+
+<h2>
+
+Contact rapide
+
+</h2>
+
+
+<form id="contactForm"
+action="https://formspree.io/f/xpqjkwdp"
+method="POST">
+
 
 <input type="text"
 name="Nom"
@@ -222,28 +261,34 @@ required>
 </textarea>
 
 
-<!-- Anti spam -->
-<input type="text" name="_gotcha" style="display:none">
+<input type="text"
+name="_gotcha"
+style="display:none">
 
 
 <button type="submit">
+
 Envoyer
+
 </button>
+
+
+<div class="success" id="success2">
+
+✔️ Message envoyé avec succès !
+
+</div>
+
 
 </form>
 
 
-<div class="success" id="successMessage">
-✔️ Message envoyé avec succès !
-</div>
-
-
-<br><br>
+<br>
 
 
 <h3>
 
-Contact rapide
+Contact direct
 
 </h3>
 
@@ -267,27 +312,31 @@ target="_blank">
 </div>
 
 
-
 </div>
 
 
 </section>
 
+
+
 <script>
 
-const form = document.getElementById("contactForm");
 
-form.addEventListener("submit", async function(e) {
+async function sendForm(formID, successID){
+
+const form = document.getElementById(formID);
+
+form.addEventListener("submit", async function(e){
 
 e.preventDefault();
 
 let data = new FormData(form);
 
-let response = await fetch(form.action, {
+let response = await fetch(form.action,{
 method: form.method,
 body: data,
-headers: {
-'Accept': 'application/json'
+headers:{
+'Accept':'application/json'
 }
 });
 
@@ -295,7 +344,7 @@ if(response.ok){
 
 form.reset();
 
-document.getElementById("successMessage")
+document.getElementById(successID)
 .style.display="block";
 
 }else{
@@ -305,6 +354,14 @@ alert("Erreur. Essayez encore.");
 }
 
 });
+
+}
+
+
+sendForm("inscriptionForm","success1");
+
+sendForm("contactForm","success2");
+
 
 </script>
 
