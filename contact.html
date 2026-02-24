@@ -202,62 +202,40 @@ S'inscrire maintenant
 
 <!-- COLONNE CONTACT -->
 
-<div>
-
-
-<h2>
-
-Contact rapide
-
-</h2>
-
-
-<form action="https://formspree.io/f/xpqjkwdp"
-
-method="POST"
-
-style="
-
-display:flex;
-flex-direction:column;
-gap:15px;
-
-">
-
+<form action="https://formspree.io/f/xpqjkwdp" method="POST">
 
 <input type="text"
-
 name="Nom"
-
 placeholder="Votre nom"
-
 required>
 
 
 <input type="email"
-
 name="Email"
-
 placeholder="Votre Email"
-
 required>
 
 
 <textarea name="Message"
-
-placeholder="Votre message">
-
+placeholder="Votre message"
+required>
 </textarea>
 
 
+<!-- Anti spam -->
+<input type="text" name="_gotcha" style="display:none">
+
+
 <button type="submit">
-
 Envoyer
-
 </button>
 
-
 </form>
+
+
+<div class="success" id="successMessage">
+✔️ Message envoyé avec succès !
+</div>
 
 
 <br><br>
@@ -265,7 +243,7 @@ Envoyer
 
 <h3>
 
-Contact direct
+Contact rapide
 
 </h3>
 
@@ -278,12 +256,10 @@ WhatsApp disponible 24h/24
 
 
 <a class="btn"
-
-href="https://wa.me/50946126417?text=Bonjour%20TechEco%20Lead,%20je%20veux%20plus%20d'informations"
-
+href="https://wa.me/50946126417?text=Bonjour%20TechEco%20Lead,%20je%20souhaite%20avoir%20plus%20d'informations%20sur%20TEM%20Academy."
 target="_blank">
 
-💬 WhatsApp
+💬 Écrire sur WhatsApp
 
 </a>
 
